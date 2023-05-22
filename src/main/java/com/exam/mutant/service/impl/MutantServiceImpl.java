@@ -49,38 +49,40 @@ public class MutantServiceImpl implements IMutantService {
 
         //horizontal
         for (int y = 0; y < tableDna.length; y++) {
-            for (int x = 0; x < tableDna[y].length - 3; x++) {
-                if (tableDna[y][x] == tableDna[y][x + 1]
-                        && tableDna[y][x] == tableDna[y][x + 2]
-                        && tableDna[y][x] == tableDna[y][x + 3]) {
-                    letterInHorizontalByFour++;
-                }
-            }
-        }
-
-        //vertical
-        for (int y = 0; y < tableDna.length - 3; y++) {
             for (int x = 0; x < tableDna[y].length; x++) {
-                if (tableDna[y][x] == tableDna[y + 1][x]
-                        && tableDna[y][x] == tableDna[y + 2][x]
-                        && tableDna[y][x] == tableDna[y + 3][x]) {
-                    letterInVerticalByFour++;
-                }
-            }
-        }
 
-        //oblicua
-        for (int y = 0; y < tableDna.length - 3; y++) {
-            for (int x = 0; x < tableDna[y].length - 3; x++) {
-                if (tableDna[y][x] == tableDna[y + 1][x + 1]
-                        && tableDna[y][x] == tableDna[y + 2][x + 2]
-                        && tableDna[y][x] == tableDna[y + 3][x + 3]) {
-                    letterInObliqueByFour++;
+                //Horizontal
+                if(x < tableDna[y].length - 3){
+                    if (tableDna[y][x] == tableDna[y][x + 1]
+                            && tableDna[y][x] == tableDna[y][x + 2]
+                            && tableDna[y][x] == tableDna[y][x + 3]) {
+                        letterInHorizontalByFour++;
+                    }
                 }
+
+                //vertical
+                if(y < tableDna.length - 3) {
+                    if (tableDna[y][x] == tableDna[y + 1][x]
+                            && tableDna[y][x] == tableDna[y + 2][x]
+                            && tableDna[y][x] == tableDna[y + 3][x]) {
+                        letterInVerticalByFour++;
+                    }
+                }
+
+                //oblicua (diagonal)
+                if(y < tableDna.length - 3 && x < tableDna[y].length - 3) {
+                    if (tableDna[y][x] == tableDna[y + 1][x + 1]
+                            && tableDna[y][x] == tableDna[y + 2][x + 2]
+                            && tableDna[y][x] == tableDna[y + 3][x + 3]) {
+                        letterInObliqueByFour++;
+                    }
+                }
+
             }
         }
 
         countSequence = letterInHorizontalByFour + letterInVerticalByFour + letterInObliqueByFour;
+
 
         return countSequence;
     }
