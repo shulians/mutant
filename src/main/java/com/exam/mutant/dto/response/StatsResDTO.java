@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class StatsResDTO extends ResponseDTO{
-    Integer count_mutant_dna;
-    Integer count_human_dna;
+    Long count_mutant_dna;
+    Long count_human_dna;
     BigDecimal ratio;
 }

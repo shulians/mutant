@@ -2,6 +2,7 @@ package com.exam.mutant.service.impl;
 
 import com.exam.mutant.exception.BusinessException;
 import com.exam.mutant.exception.TechnicalException;
+import com.exam.mutant.model.Human;
 import com.exam.mutant.repository.HumanRepository;
 import com.exam.mutant.service.IMutantService;
 import com.exam.mutant.util.StringUtils;
@@ -26,7 +27,11 @@ public class MutantServiceImpl implements IMutantService {
 
         boolean isMutant = countSequenceOfFourLetters(dna) > 1;
 
-        repository.save(dna,isMutant);
+        String stringDna = String.join(",", dna);
+
+        Human human = Human.builder().dna(stringDna).isMutant(isMutant).build();
+
+        repository.save(human);
 
         if(!isMutant)
             throw new BusinessException("DNA does not correspond to a mutant");
