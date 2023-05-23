@@ -1,1 +1,3 @@
-"[asd](https://www.ecured.cu/Magneto_%28personaje_de_X-Men%29#/media/File:Hjgfyhguk.jpg)"
+# Mutant-api
+![magneto](https://static.wikia.nocookie.net/marvelvscapcomespaol/images/7/73/Magnintro.gif/revision/latest?cb=20170504234542&path-prefix=es)
+
