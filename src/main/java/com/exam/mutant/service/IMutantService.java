@@ -4,5 +4,5 @@ import com.exam.mutant.exception.BusinessException;
 import com.exam.mutant.exception.TechnicalException;
 
 public interface IMutantService {
-    void isMutant(String[] dna) throws BusinessException, TechnicalException;
+    boolean isMutant(String[] dna) throws BusinessException, TechnicalException;
 }

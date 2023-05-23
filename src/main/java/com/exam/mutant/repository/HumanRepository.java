@@ -8,18 +8,3 @@ import org.springframework.stereotype.Repository;
 public interface HumanRepository extends JpaRepository<Human, Integer> {
     long countByIsMutant(Boolean isMutant);
 }
-
-   /* public void save(String[] dna, Boolean isMutant){
-        String str = String.join(",", dna);
-
-        Human mutant = Human.builder()
-                .id(list.size()+1)
-                .dna(str)
-                .isMutant(isMutant).build();
-
-        list.add(mutant);
-    }
-
-    public List<Human> findAll(){
-        return list;
-    }*/

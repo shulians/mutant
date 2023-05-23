@@ -22,7 +22,7 @@ public class MutantServiceImpl implements IMutantService {
     }
 
     @Override
-    public void isMutant(String[] dna) throws TechnicalException, BusinessException {
+    public boolean isMutant(String[] dna) throws TechnicalException, BusinessException {
         this.isDnaValid(dna);
 
         boolean isMutant = countSequenceOfFourLetters(dna) > 1;
@@ -35,6 +35,8 @@ public class MutantServiceImpl implements IMutantService {
 
         if(!isMutant)
             throw new BusinessException("DNA does not correspond to a mutant");
+
+        return Boolean.TRUE;
     }
 
     private void isDnaValid(String[] dna)throws TechnicalException{
