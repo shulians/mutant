@@ -9,8 +9,18 @@ MutantRecruiting permite reconocer mutantes (basándose en su secuencia de ADN) 
 - Maven 3.x.x
 - MySQL 5.x.x
 
+## Resource
+```
+├─ src    
+│  └── resource
+│      └── db  
+│          ├── human.sql                       // Archivo de import MySql
+│      └── request  
+│          ├── Mutant.postman_collection.json  // Archivo de import collection Postman
+```
+
 ## Servicios
-- POST /mutant - Detecta si la secuencia de ADN enviada es un humano mutante y lo guarda.
+* `POST` /mutant - Detecta si la secuencia de ADN enviada es un humano mutante y lo guarda.
    Posibles respuestas
    200 - OK
    ```
@@ -27,7 +37,7 @@ MutantRecruiting permite reconocer mutantes (basándose en su secuencia de ADN) 
       "message": "There are characters that do not represent the nitrogenous base of DNA"
     }
    ``` 
-- GET /stats
+* `GET` /stats
    200-OK
    ```
     {
