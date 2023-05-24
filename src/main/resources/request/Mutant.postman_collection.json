@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "69b2c485-96c3-476e-8284-19cb75a4260c",
+		"name": "Mutant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "IsMutant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"dna\":[\"ATGCTA\",\"CAGTGC\",\"TTATGT\",\"AGAAGG\",\"CCCCA\",\"TCACTG\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/mutant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stats DNA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Healt - Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Remote",
+			"item": [
+				{
+					"name": "IsMutant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"dna\":[\"TTGCTA\",\"CAGTGC\",\"TTATGT\",\"AGAAGG\",\"CCCTA\",\"TCACTG\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://mutant-git-julian-m-personal-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/mutant",
+							"protocol": "https",
+							"host": [
+								"mutant-git-julian-m-personal-dev",
+								"apps",
+								"sandbox-m2",
+								"ll9k",
+								"p1",
+								"openshiftapps",
+								"com"
+							],
+							"path": [
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stats DNA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mutant-git-julian-m-personal-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/stats",
+							"protocol": "https",
+							"host": [
+								"mutant-git-julian-m-personal-dev",
+								"apps",
+								"sandbox-m2",
+								"ll9k",
+								"p1",
+								"openshiftapps",
+								"com"
+							],
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Healt - Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mutant-git-julian-m-personal-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/actuator/health",
+							"protocol": "https",
+							"host": [
+								"mutant-git-julian-m-personal-dev",
+								"apps",
+								"sandbox-m2",
+								"ll9k",
+								"p1",
+								"openshiftapps",
+								"com"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
