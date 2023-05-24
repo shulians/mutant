@@ -25,14 +25,15 @@ public class StatsServiceImpl implements IStatsService {
         Long countH =  repository.count();
         Long countM = repository.countByIsMutant(Boolean.TRUE);
 
-        BigDecimal bigCountH = BigDecimal.valueOf(countH);
-        BigDecimal bigCountM = BigDecimal.valueOf(countM);
-        BigDecimal ratio = bigCountM.divide(bigCountH,1, RoundingMode.HALF_UP);
+        if(countH > 0) {
+            BigDecimal bigCountH = BigDecimal.valueOf(countH);
+            BigDecimal bigCountM = BigDecimal.valueOf(countM);
+            BigDecimal ratio = bigCountM.divide(bigCountH, 1, RoundingMode.HALF_UP);
 
-        stats.setCount_human_dna(countH);
-        stats.setCount_mutant_dna(countM);
-        stats.setRatio(ratio);
-
+            stats.setCount_human_dna(countH);
+            stats.setCount_mutant_dna(countM);
+            stats.setRatio(ratio);
+        }
         return stats;
     }
 }
