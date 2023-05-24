@@ -19,6 +19,24 @@ MutantRecruiting permite reconocer mutantes (basándose en su secuencia de ADN) 
 │          ├── Mutant.postman_collection.json  // Archivo de import collection Postman
 ```
 
+## Instalacion
+ - Clonar repositorio utilizando Git
+    ```
+    git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+    ```
+ - importar y ejecutar human.sql en algun gestor de base de datos MySql (ej: xampp)
+ 
+## Establecer credenciales (application.properties)
+   ```
+   spring.datasource.url
+   spring.datasource.username
+   spring.datasource.password
+   ```
+## Ejecucion
+Dentro de la carpeta del proyecto /mutant abrir consola y ejecutar
+```
+mvnw spring-boot:run
+```
 ## Servicios
 * `POST /mutant` Detecta si la secuencia de ADN enviada es un humano mutante y lo guarda.
    - 200 - OK
