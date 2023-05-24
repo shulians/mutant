@@ -22,7 +22,7 @@ MutantRecruiting permite reconocer mutantes (basándose en su secuencia de ADN) 
 ## Instalacion
  - Clonar repositorio utilizando Git
     ```
-    git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+    git clone https://github.com/shulians/mutant.git
     ```
  - importar y ejecutar human.sql en algun gestor de base de datos MySql (ej: xampp)
  
