@@ -5,10 +5,12 @@ import com.exam.mutant.dto.response.StatsResDTO;
 import com.exam.mutant.model.Human;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class TestUtil {
     public final static String DNA_MUTANT_STRING = "ATGCGA,CAGTGC,TTATGT,AGAAGG,CCCCTA,TCACTG";
     public final static String DNA_NOT_MUTANT_STRING = "CTGCGA,CAGTTC,TTATGT,AGAAGG,CCCTTA,TCACTG";
+    public final static LocalDateTime LOCAL_DATE_TIME = LocalDateTime.of(2023, 05, 25,12,00);
     public final static String[] DNA_MUTANT = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};;
     public final static String[] DNA_NOT_MUTANT = {"CTGCGA","CAGTTC","TTATGT","AGAAGG","CCCTTA","TCACTG"};
     public final static String[] DNA_NOT_REPRESENT = {"ZTGCZA","CAGTTC","TTATGT","AGAXGG","CHCTTA","TCACPG"};
@@ -26,6 +28,7 @@ public class TestUtil {
         return Human.builder()
                 .dna(DNA_MUTANT_STRING)
                 .isMutant(Boolean.TRUE)
+                .dateAdd(LOCAL_DATE_TIME)
                 .build();
     }
 
@@ -33,6 +36,7 @@ public class TestUtil {
         return Human.builder()
                 .dna(DNA_NOT_MUTANT_STRING)
                 .isMutant(Boolean.FALSE)
+                .dateAdd(LOCAL_DATE_TIME)
                 .build();
     }
 

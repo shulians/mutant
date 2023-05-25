@@ -9,6 +9,7 @@ import com.exam.mutant.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @Service
@@ -29,7 +30,11 @@ public class MutantServiceImpl implements IMutantService {
 
         String stringDna = String.join(",", dna);
 
-        Human human = Human.builder().dna(stringDna).isMutant(isMutant).build();
+        Human human = Human.builder()
+                            .dna(stringDna)
+                            .isMutant(isMutant)
+                            .dateAdd(LocalDateTime.now())
+                            .build();
 
         repository.save(human);
 

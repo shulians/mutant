@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2023 a las 06:40:38
+-- Tiempo de generación: 25-05-2023 a las 08:25:59
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -29,9 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `human` (
   `id` int(11) NOT NULL,
-  `dna` varchar(255) DEFAULT NULL,
-  `is_mutant` bit(1) DEFAULT NULL
+  `dna` varchar(1000) DEFAULT NULL,
+  `is_mutant` bit(1) DEFAULT NULL,
+  `date_add` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `human`
+--
 
 --
 -- Índices para tablas volcadas
