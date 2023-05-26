@@ -24,12 +24,12 @@
 							"raw": "{\r\n \"dna\":[\"ATGCTA\",\"CAGTGC\",\"TTATGT\",\"AGAAGG\",\"CCCCA\",\"TCACTG\"]\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8081/mutant",
+							"raw": "http://localhost:8080/mutant",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"mutant"
 							]
