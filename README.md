@@ -38,6 +38,17 @@ Dentro de la carpeta del proyecto /mutant abrir consola y ejecutar
 mvnw spring-boot:run
 ```
 ## Servicios
+* `GET /actuator/health` Muestra información acerca de la salud de la api.
+   - 200 - OK
+     ```
+      {
+          "status": "UP",
+          "groups": [
+              "liveness",
+              "readiness"
+          ]
+      }
+     ``` 
 * `POST /mutant` Detecta si la secuencia de ADN enviada es un humano mutante y lo guarda.
    - 200 - OK
       ```
